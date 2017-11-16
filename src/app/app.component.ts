@@ -12,6 +12,8 @@ export class AppComponent {
   s: string = "Hello2";
   
   constructor(apiService:ApiService) {
-    apiService.getAllSprints();
+    apiService.getAllSprints().subscribe(data=>{
+      console.log(data);
+    });
   }
 }
