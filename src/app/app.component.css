@@ -13,6 +13,10 @@
     background-image: linear-gradient(180deg, #fff 0%, #f5f5f5 100%);
     box-shadow: 0 1px 2px #d0d1d1;
 }
+
+.main {
+    padding: 20px 0 0 20px;
+}
 .sidebar {
     position: fixed;
     top: 51px;
@@ -25,17 +29,4 @@
     overflow-y: auto;
     background-color: #f5f5f5;
     border-right: 1px solid #eee;
-}
-.main {
-    padding: 20px 0 0 20px;
-}
-.sprint li:before {
-    content: "\f073";
-    font-family:"FontAwesome";
-    left:-5px;
-    position:absolute;
-    top:10px;
-    font-size: 1.3rem;
-    color: #041e49;
-    z-index: 9999;
 }

@@ -1,0 +1,10 @@
+.sprint li:before {
+    content: "\f073";
+    font-family:"FontAwesome";
+    left:-5px;
+    position:absolute;
+    top:10px;
+    font-size: 1.3rem;
+    color: #041e49;
+    z-index: 9999;
+}

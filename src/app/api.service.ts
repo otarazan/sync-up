@@ -11,12 +11,12 @@ import { Gcr } from '../mock/gcr.data';
 @Injectable()
 export class ApiService {
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
 
-   }  
+   }
 
   getAllSprints(){
-    return Observable.of(Sprints);
+    return Sprints;
 
     // return this.http.get(this.spring)
     // .map( (response: Response) => {

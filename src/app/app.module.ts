@@ -5,11 +5,13 @@ import {ApiService} from './api.service'
 import { AppComponent } from './app.component';
 import { Http } from '@angular/http';
 import { TeamsComponent } from './teams/teams.component';
+import { SprintsComponent } from './sprints/sprints.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TeamsComponent
+    TeamsComponent,
+    SprintsComponent
   ],
   imports: [
     BrowserModule,

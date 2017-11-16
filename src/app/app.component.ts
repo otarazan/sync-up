@@ -10,10 +10,7 @@ export class AppComponent {
   title = 'app';
 
   s: string = "Hello2";
-  
-  constructor(apiService:ApiService) {
-    apiService.getAllSprints().subscribe(data=>{
-      console.log(data);
-    });
-  }
+
+  constructor(apiService:ApiService) {}
+
 }
