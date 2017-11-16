@@ -12,7 +12,7 @@ export const Sprints = [
     "id": "17W0406",
     "purpose": null,
     "name": "17W0406",
-    "startWeek": 4,
+    "startWeek": 6,
     "endWeek": 6,
     "value": null,
     "current": false
@@ -24,7 +24,7 @@ export const Sprints = [
     "startWeek": 7,
     "endWeek": 9,
     "value": null,
-    "current": false
+    "current": true
   },
   {
     "id": "17W1012",
