@@ -1,32 +1,34 @@
-<div class="accordion" id="accordion2" *ngFor='let team of teamList; let i=index'>
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" href='#{{i}}'>
-        {{team.teamName | uppercase }}
-      </a>
-    </div>
-    <div  [attr.id]="i" class="accordion-body collapse in">
-      <div class="accordion-inner">
-        <div class="user-story table " *ngFor='let us of team.cards'>
-            <a>{{us.name}}</a>
-            <table class=" table table-striped" style="width:100%">
-                <tr>
-                  <td>Subject</td>
-                  <td>Status</td> 
-                  <td>Age</td> 
-                  <td>Owner</td>
-                  <td>Project</td>
-                  <td>Branch</td>
-                </tr>
-                <tr *ngFor='let gcr of us.gcrs'>
-                    <td><a href="#">{{gcr.title}}</a></td>
-                    <td [ngClass]="gcr.status.flag">{{gcr.status.value}}</td> 
-                    <td><span class="danger btn-danger badge">Old</span></td> 
-                    <td>{{gcr.author}}</td> 
-                    <td>{{gcr.project}}</td> 
-                    <td>{{gcr.branch}}</td>
-                </tr>
-              </table>
+<div  *ngIf="teamList.length>0">
+  <div class="accordion" id="accordion2" *ngFor='let team of teamList; let i=index'>
+    <div class="accordion-group">
+      <div class="accordion-heading">
+        <a class="accordion-toggle" data-toggle="collapse" href='#{{i}}'>
+          {{team.teamName | uppercase }}
+        </a>
+      </div>
+      <div  [attr.id]="i" class="accordion-body collapse in">
+        <div class="accordion-inner">
+          <div class="user-story table " *ngFor='let us of team.cards'>
+              <a>{{us.name}}</a>
+              <table class=" table table-striped" style="width:100%">
+                  <tr>
+                    <td>Subject</td>
+                    <td>Status</td> 
+                    <td>Age</td> 
+                    <td>Owner</td>
+                    <td>Project</td>
+                    <td>Branch</td>
+                  </tr>
+                  <tr *ngFor='let gcr of us.gcrs'>
+                      <td><a href="#">{{gcr.title}}</a></td>
+                      <td [ngClass]="gcr.status.flag">{{gcr.status.value}}</td> 
+                      <td><span class="danger btn-danger badge">Old</span></td> 
+                      <td>{{gcr.author}}</td> 
+                      <td>{{gcr.project}}</td> 
+                      <td>{{gcr.branch}}</td>
+                  </tr>
+                </table>
+          </div>
         </div>
       </div>
     </div>

@@ -9,15 +9,16 @@ import { Component, OnInit, Input } from '@angular/core';
 export class TeamsComponent implements OnInit {
 
   pageTitle:string = 'TEAMS';
-  @Input() teamList:any;
+  @Input() teamList=[];
 
   userStory:any[] = [1,2,3,4,5,6,7,8];
 
 
-  constructor(public apiService:ApiService) { }
+  constructor(public apiService:ApiService) {
+   }
 
   ngOnInit() {
-    //this.teamList = this.apiService.getTeamsBySprintId();
+    this.teamList=[];
   }
 
 }
