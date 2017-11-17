@@ -15,7 +15,10 @@ export class AppComponent {
   constructor(private apiService:ApiService) {}
 
   onSprintClicked(sprint:any){
-    this.teams = this.apiService.getTeamsBySprintId(sprint.id);
+    this.teams = this.apiService.getTeamsBySprintId(sprint.id).subscribe(sprintDetail=>{
+      console.log(sprintDetail);
+      this.teams = sprintDetail;
+    });
   }
 
 }

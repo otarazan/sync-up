@@ -2,12 +2,12 @@
   <div class="accordion-group">
     <div class="accordion-heading">
       <a class="accordion-toggle" data-toggle="collapse" href='#{{i}}'>
-        {{team.name | uppercase }}
+        {{team.teamName | uppercase }}
       </a>
     </div>
     <div  [attr.id]="i" class="accordion-body collapse in">
       <div class="accordion-inner">
-        <div class="user-story table " *ngFor='let us of team.us'>
+        <div class="user-story table " *ngFor='let us of team.cards'>
             <a>{{us.name}} Gerrit Code Requests</a>
             <table class=" table table-striped" style="width:100%">
                 <tr>

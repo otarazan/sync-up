@@ -18,7 +18,10 @@ export class SprintsComponent implements OnInit {
   constructor(private _apiService: ApiService, ) { }
 
   ngOnInit() {
-    this.sprints =_.sortBy(this._apiService.getAllSprints(), 'current').reverse();
+    this._apiService.getAllSprints().subscribe(sprints => {
+      console.log(sprints);
+      this.sprints =_.sortBy(sprints, 'current').reverse();
+    });
   }
 
   getTeams(sprint){

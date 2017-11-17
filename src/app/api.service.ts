@@ -7,6 +7,7 @@ import { Gcr } from '../mock/gcr.data';
 import { Teams } from '../mock/team.data';
 import * as _ from 'lodash';
 
+const server :string = 'http://136.225.8.185:8080';
 
 @Injectable()
 export class ApiService {
@@ -16,28 +17,19 @@ export class ApiService {
    }
 
   getAllSprints(){
-    return Sprints;
+    return this.http.get(server+ '/dashboard/v1/sprint');
   }
 
   getTeamsBySprintId(id:string){
-    let result =_.filter(Teams, function(o) { 
-      console.log(o.sprintid);
-      return o.sprintid == id; 
-   });
-   result.forEach(element => {
-    element.gcr = Gcr;
-   });
-    console.log(result);
-   return result;
+    return this.http.get(`${server}/dashboard/v1/sprint/${id}`);
   }
 
   getSprintById(id:string){
     return Observable.of(Sprints);
-
   }
 
   getGCRsByUSId(id:string){
-    return Gcr;
+    return this.http.get(`${server}/dashboard/v1/gerritReview/${id}`);
   }
 
 }
