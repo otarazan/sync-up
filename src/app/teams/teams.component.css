@@ -4,12 +4,48 @@
     background-color: #b4b1b1;
     border-color: #ddd;
     padding:10px;
+    border-bottom: 1px solid #e6e6e6;
 }
 .user-story{
     border-color: rgba(221, 221, 221, 0.986);
 }
 
-.GREEN{
+.GREEN {
     background-color: green;
     color:white;
+}
+.RED {
+    background-color: red;
+    color: #fff;
+}
+.BLUE {
+    background-color: blue;
+    color: #fff;
+}
+.accordion-heading a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+.accordion-heading a:before {
+    content:'\f0c0';
+    font-family:"FontAwesome";
+    left:-5px;
+    top:10px;
+    font-size: 1.3rem;
+    color: #494949;
+    z-index: 9999;
+}
+.user-story {
+    font-weight: bold;
+    padding: 15px;
+    border-bottom: 1px solid #e6e6e6;
+}
+.user-story h4 {
+    margin-bottom: 12px;
+    border-bottom: 1px solid #e6e6e6;
+}
+.user-story p {
+    font-size: 1.2rem;
+    font-weight: normal
 }

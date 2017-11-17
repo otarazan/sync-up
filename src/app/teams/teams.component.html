@@ -9,22 +9,28 @@
       <div  [attr.id]="i" class="accordion-body collapse in">
         <div class="accordion-inner">
           <div class="user-story table " *ngFor='let us of team.cards'>
-              <a>{{us.name}}</a>
+              <h4><a [href]="us.href" target="_blank">{{us.name}}</a></h4>
+                <p><strong> Name:</strong> {{us.bucName}}</p>
+                <p><strong>Created By:</strong> {{us.createdBy}}</p>
               <table class=" table table-striped" style="width:100%">
-                  <tr>
-                    <td>Subject</td>
-                    <td>Status</td> 
-                    <td>Age</td> 
-                    <td>Owner</td>
-                    <td>Project</td>
-                    <td>Branch</td>
-                  </tr>
+                  <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Status</th>
+                        <th>Comments</th>
+                        <th>Patch Sets</th>
+                        <th>Owner</th>
+                        <th>Project</th>
+                        <th>Branch</th>
+                    </tr>
+                    </thead>
                   <tr *ngFor='let gcr of us.gcrs'>
-                      <td><a href="#">{{gcr.title}}</a></td>
-                      <td [ngClass]="gcr.status.flag">{{gcr.status.value}}</td> 
-                      <td><span class="danger btn-danger badge">Old</span></td> 
-                      <td>{{gcr.author}}</td> 
-                      <td>{{gcr.project}}</td> 
+                      <td><a [href]="gcr.href" target="_blank">{{gcr.title}}</a></td>
+                      <td ><span class="badge {{gcr.status.flag}}">{{gcr.status.value}}</span></td>
+                      <td>{{gcr.numberOfComments}}</td>
+                      <td>{{gcr.numberOfPatchsets}}</td>
+                      <td>{{gcr.owner.name}}</td>
+                      <td>{{gcr.project}}</td>
                       <td>{{gcr.branch}}</td>
                   </tr>
                 </table>
