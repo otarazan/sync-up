@@ -8,3 +8,8 @@
     color: #041e49;
     z-index: 9999;
 }
+
+.current{
+    font-weight: bold;
+    color:red;
+}

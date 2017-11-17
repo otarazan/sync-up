@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class TeamsComponent implements OnInit {
 
   pageTitle:string = 'TEAMS';
-  teamList:any[] = ["Avengers", "BitsBytes", "specTang", "friday", "luso"];
+  teamList:any[] = ["Avengers", "Bits&Bytes", "specTang", "friday", "luso"];
 
   userStory:any[] = [1,2,3,4,5,6,7,8];
 

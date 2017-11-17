@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/map';
 import { HttpClient } from '@angular/common/http';
 import { Sprints } from '../mock/sprint.data';
 import { Gcr } from '../mock/gcr.data';

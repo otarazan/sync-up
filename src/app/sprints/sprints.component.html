@@ -1,5 +1,5 @@
 <ul class="nav nav-sidebar sprint">
-  <li *ngFor= "let sprint of sprints ">
-    <a>{{sprint.name}}</a>
+  <li *ngFor= "let sprint of sprints">
+    <a [ngClass]="{'current': sprint.current }"> {{sprint.name}} </a>
   </li>
 </ul>

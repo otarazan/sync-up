@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from './../api.service';
 import * as _ from 'lodash';
+import { NgClass } from '@angular/common';
 
 
 @Component({
@@ -19,5 +20,4 @@ export class SprintsComponent implements OnInit {
     this.sprints =_.sortBy(this._apiService.getAllSprints(), 'current').reverse();
     console.log(this.sprints);
   }
-
 }
