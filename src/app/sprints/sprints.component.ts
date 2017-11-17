@@ -12,6 +12,7 @@ import * as _ from 'lodash';
 export class SprintsComponent implements OnInit {
 
   sprints:any;
+  currentSprint:any;
 
   @Output() notify:EventEmitter<any>= new EventEmitter<any>();
 
@@ -19,13 +20,14 @@ export class SprintsComponent implements OnInit {
 
   ngOnInit() {
     this._apiService.getAllSprints().subscribe(sprints => {
-      console.log(sprints);
-      this.sprints =_.sortBy(sprints, 'current').reverse();
-      this.getTeams(this.sprints[0]);
+      this.sprints = sprints; //_.sortBy(sprints, 'current').reverse();
+      let defaultSprint = _.find(sprints,'current', true);
+      this.getTeams(defaultSprint);
     });
   }
 
   getTeams(sprint){
+    this.currentSprint = sprint;
     this.notify.emit(sprint);
   }
 }

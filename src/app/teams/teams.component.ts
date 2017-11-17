@@ -18,7 +18,7 @@ export class TeamsComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.teamList=[];
+    
   }
 
 }

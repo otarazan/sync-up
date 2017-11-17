@@ -1,4 +1,4 @@
-<div  *ngIf="teamList.length>0">
+<div  *ngIf="teamList!=undefined && teamList.length>0">
   <div class="accordion" id="accordion2" *ngFor='let team of teamList; let i=index'>
     <div class="accordion-group">
       <div class="accordion-heading">
@@ -9,7 +9,7 @@
       <div  [attr.id]="i" class="accordion-body collapse in">
         <div class="accordion-inner">
           <div class="user-story table " *ngFor='let us of team.cards'>
-              <h4><a [href]="us.href" target="_blank">{{us.name}}</a></h4>
+              <h4><a [href]="us.href" target="_blank">{{us.type}} {{us.id}} {{us.name}}</a></h4>
                 <p><strong> Name:</strong> {{us.bucName}}</p>
                 <p><strong>Created By:</strong> {{us.createdBy}}</p>
               <table class=" table table-striped" style="width:100%">
@@ -17,6 +17,7 @@
                     <tr>
                         <th>Subject</th>
                         <th>Status</th>
+                        <th>Approval History</th>
                         <th>Comments</th>
                         <th>Patch Sets</th>
                         <th>Owner</th>
@@ -26,7 +27,15 @@
                     </thead>
                   <tr *ngFor='let gcr of us.gcrs'>
                       <td><a [href]="gcr.href" target="_blank">{{gcr.title}}</a></td>
-                      <td ><span class="badge {{gcr.status.flag}}">{{gcr.status.value}}</span></td>
+                      <td >
+                        <span data-toggle="tooltip"  class="badge {{gcr.status.flag}}" title="{{gcr.status.dateLastPatchSet}}">{{gcr.status.value}}</span>
+                      </td>
+                      <td>
+                          <p *ngFor='let history of gcr.status.approvalHistory'>  
+                              <span class="label {{history.value>= 0?'label-success':'label-danger'}}">{{history.value}}</span>
+                              {{history.user.name}}                            
+                          </p>
+                      </td>
                       <td>{{gcr.numberOfComments}}</td>
                       <td>{{gcr.numberOfPatchsets}}</td>
                       <td>{{gcr.owner.name}}</td>
@@ -40,6 +49,11 @@
     </div>
   </div>
 </div>
-<div  *ngIf="teamList.length==0">
-    <img class="loading-icon" src="assets/loading.gif">
+<div  *ngIf="teamList==null">
+    No Data
 </div>
+<script>
+  $(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip();   
+  });
+</script>

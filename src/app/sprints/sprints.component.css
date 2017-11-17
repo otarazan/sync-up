@@ -12,4 +12,11 @@
 .current{
     font-weight: bold;
     color:red;
+    font-weight: bold;
+}
+
+.selected{
+    font-weight: bold;
+    color:blue;
+    font-weight: bold;
 }
