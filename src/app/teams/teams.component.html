@@ -2,12 +2,32 @@
   <div class="accordion-group">
     <div class="accordion-heading">
       <a class="accordion-toggle" data-toggle="collapse" href='#{{i}}'>
-        {{ team | uppercase }}
+        {{team.name | uppercase }}
       </a>
     </div>
     <div  [attr.id]="i" class="accordion-body collapse in">
       <div class="accordion-inner">
-        Anim pariatur cliche reprehenerit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+        <div class="user-story table " *ngFor='let us of team.us'>
+            <a>{{us.name}} Gerrit Code Requests</a>
+            <table class=" table table-striped" style="width:100%">
+                <tr>
+                  <td>Subject</td>
+                  <td>Status</td> 
+                  <td>Age</td> 
+                  <td>Owner</td>
+                  <td>Project</td>
+                  <td>Branch</td>
+                </tr>
+                <tr *ngFor='let gcr of team.gcr'>
+                    <td>{{gcr.subject}}</td>
+                    <td>{{gcr.status}}</td> 
+                    <td><span class="danger btn-danger badge">Old</span></td> 
+                    <td>{{gcr.author}}</td> 
+                    <td>{{gcr.project}}</td> 
+                    <td>{{gcr.branch}}</td>
+                </tr>
+              </table>
+        </div>
       </div>
     </div>
   </div>

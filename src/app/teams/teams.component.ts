@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ApiService } from './../api.service';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'teams',
@@ -8,13 +9,17 @@ import { Component, OnInit } from '@angular/core';
 export class TeamsComponent implements OnInit {
 
   pageTitle:string = 'TEAMS';
-  teamList:any[] = ["Avengers", "Bits&Bytes", "specTang", "friday", "luso"];
+  @Input() teamList:any;
 
   userStory:any[] = [1,2,3,4,5,6,7,8];
 
-  constructor() { }
+
+  constructor(public apiService:ApiService) { }
 
   ngOnInit() {
+    //this.teamList = this.apiService.getTeamsBySprintId();
   }
+
+  
 
 }

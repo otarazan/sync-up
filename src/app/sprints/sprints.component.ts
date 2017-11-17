@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,Output, OnInit, EventEmitter } from '@angular/core';
 import { ApiService } from './../api.service';
 import * as _ from 'lodash';
-import { NgClass } from '@angular/common';
+
 
 
 @Component({
@@ -13,11 +13,15 @@ export class SprintsComponent implements OnInit {
 
   sprints:any;
 
+  @Output() notify:EventEmitter<any>= new EventEmitter<any>();
 
-  constructor(private _apiService: ApiService) { }
+  constructor(private _apiService: ApiService, ) { }
 
   ngOnInit() {
     this.sprints =_.sortBy(this._apiService.getAllSprints(), 'current').reverse();
-    console.log(this.sprints);
+  }
+
+  getTeams(sprint){
+    this.notify.emit(sprint);
   }
 }

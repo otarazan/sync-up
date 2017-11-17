@@ -4,9 +4,9 @@ import 'rxjs/add/operator/map';
 import { HttpClient } from '@angular/common/http';
 import { Sprints } from '../mock/sprint.data';
 import { Gcr } from '../mock/gcr.data';
+import { Teams } from '../mock/team.data';
+import * as _ from 'lodash';
 
-// const sprints: any = require('../mock/sprint.json');
-// const gcrs: any = require('../mock/gcr.json');
 
 @Injectable()
 export class ApiService {
@@ -17,11 +17,18 @@ export class ApiService {
 
   getAllSprints(){
     return Sprints;
+  }
 
-    // return this.http.get(this.spring)
-    // .map( (response: Response) => {
-    //   const data = response.json();
-    //   return data; } );
+  getTeamsBySprintId(id:string){
+    let result =_.filter(Teams, function(o) { 
+      console.log(o.sprintid);
+      return o.sprintid == id; 
+   });
+   result.forEach(element => {
+    element.gcr = Gcr;
+   });
+    console.log(result);
+   return result;
   }
 
   getSprintById(id:string){
@@ -30,7 +37,7 @@ export class ApiService {
   }
 
   getGCRsByUSId(id:string){
-    return Observable.of(Sprints);
+    return Gcr;
   }
 
 }

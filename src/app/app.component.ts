@@ -10,7 +10,12 @@ export class AppComponent {
   title = 'app';
 
   s: string = "Hello2";
+  teams:any;
 
-  constructor(apiService:ApiService) {}
+  constructor(private apiService:ApiService) {}
+
+  onSprintClicked(sprint:any){
+    this.teams = this.apiService.getTeamsBySprintId(sprint.id);
+  }
 
 }
