@@ -4,7 +4,6 @@
     background-color: #b4b1b1;
     border-color: #ddd;
     padding:10px;
-    border-bottom: 1px solid #e6e6e6;
 }
 .user-story{
     border-color: rgba(221, 221, 221, 0.986);
@@ -48,4 +47,9 @@
 .user-story p {
     font-size: 1.2rem;
     font-weight: normal
+}
+
+.loading-icon{
+    display:block;
+    margin: 0 auto;
 }
