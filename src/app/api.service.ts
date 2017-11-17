@@ -28,4 +28,8 @@ export class ApiService {
     return this.http.get(`${server}/dashboard/v1/gerritReview/${id}`);
   }
 
+  getChartDataByUsId(id:string){
+    return this.http.get(`${server}/dashboard/v1/userStory/${id}`);
+  }
+
 }

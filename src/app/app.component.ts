@@ -24,6 +24,10 @@ export class AppComponent {
                 us.gcrs = gcrs;
                 console.log(us);
               });
+              this.apiService.getChartDataByUsId(us.id).subscribe(chartData=>{
+                us.chartData = chartData;
+                console.log(chartData);
+              });
           });
       });
       this.teams = sprintDetail;
