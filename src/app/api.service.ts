@@ -7,7 +7,7 @@ import { Gcr } from '../mock/gcr.data';
 import { Teams } from '../mock/team.data';
 import * as _ from 'lodash';
 
-const server :string = 'http://localhost:8080';
+const server :string = 'http://136.225.8.185:8080';
 
 @Injectable()
 export class ApiService {
