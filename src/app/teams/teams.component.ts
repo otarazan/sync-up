@@ -20,6 +20,4 @@ export class TeamsComponent implements OnInit {
     //this.teamList = this.apiService.getTeamsBySprintId();
   }
 
-  
-
 }

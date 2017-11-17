@@ -1,5 +1,6 @@
 <ul class="nav nav-sidebar sprint">
-  <li *ngFor= "let sprint of sprints ">
-    <a (click)="getTeams(sprint)">{{sprint.name}}</a>
+  <li *ngFor= "let sprint of sprints">
+    <a (click)="getTeams(sprint)"
+        [ngClass]="{'current': sprint.current }">{{sprint.name}}</a>
   </li>
 </ul>
