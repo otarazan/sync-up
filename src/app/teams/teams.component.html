@@ -8,7 +8,7 @@
     <div  [attr.id]="i" class="accordion-body collapse in">
       <div class="accordion-inner">
         <div class="user-story table " *ngFor='let us of team.cards'>
-            <a>{{us.name}} Gerrit Code Requests</a>
+            <a>{{us.name}}</a>
             <table class=" table table-striped" style="width:100%">
                 <tr>
                   <td>Subject</td>
@@ -18,9 +18,9 @@
                   <td>Project</td>
                   <td>Branch</td>
                 </tr>
-                <tr *ngFor='let gcr of team.gcr'>
-                    <td>{{gcr.subject}}</td>
-                    <td>{{gcr.status}}</td> 
+                <tr *ngFor='let gcr of us.gcrs'>
+                    <td><a href="#">{{gcr.title}}</a></td>
+                    <td [ngClass]="gcr.status.flag">{{gcr.status.value}}</td> 
                     <td><span class="danger btn-danger badge">Old</span></td> 
                     <td>{{gcr.author}}</td> 
                     <td>{{gcr.project}}</td> 

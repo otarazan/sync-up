@@ -24,10 +24,6 @@ export class ApiService {
     return this.http.get(`${server}/dashboard/v1/sprint/${id}`);
   }
 
-  getSprintById(id:string){
-    return Observable.of(Sprints);
-  }
-
   getGCRsByUSId(id:string){
     return this.http.get(`${server}/dashboard/v1/gerritReview/${id}`);
   }

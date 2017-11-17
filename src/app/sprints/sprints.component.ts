@@ -21,6 +21,7 @@ export class SprintsComponent implements OnInit {
     this._apiService.getAllSprints().subscribe(sprints => {
       console.log(sprints);
       this.sprints =_.sortBy(sprints, 'current').reverse();
+      this.getTeams(this.sprints[0]);
     });
   }
 
