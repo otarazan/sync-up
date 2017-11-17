@@ -6,16 +6,20 @@ import { AppComponent } from './app.component';
 import { Http } from '@angular/http';
 import { TeamsComponent } from './teams/teams.component';
 import { SprintsComponent } from './sprints/sprints.component';
+import { SimpleChartComponent } from './simple-chart/simple-chart.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
     AppComponent,
     TeamsComponent,
-    SprintsComponent
+    SprintsComponent,
+    SimpleChartComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

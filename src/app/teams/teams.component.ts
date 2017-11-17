@@ -11,14 +11,10 @@ export class TeamsComponent implements OnInit {
   pageTitle:string = 'TEAMS';
   @Input() teamList=[];
 
-  userStory:any[] = [1,2,3,4,5,6,7,8];
-
-
   constructor(public apiService:ApiService) {
    }
 
   ngOnInit() {
-    
   }
 
 }

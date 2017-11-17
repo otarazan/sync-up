@@ -11,4 +11,3 @@ export const Gcr = [
       "subject":"Initial project commit"
     }
   ]
-  

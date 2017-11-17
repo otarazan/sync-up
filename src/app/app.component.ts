@@ -22,7 +22,7 @@ export class AppComponent {
     this.teams = this.apiService.getTeamsBySprintId(sprint.id).subscribe((sprintDetail:any)=>{
       _.forEach(sprintDetail, team => {
           _.forEach(team.cards, us => {
-              this.apiService.getGCRsByUSId(us.id).subscribe(gcrs=>{ 
+              this.apiService.getGCRsByUSId(us.id).subscribe(gcrs=>{
                 us.gcrs = gcrs;
               });
               this.apiService.getChartDataByUsId(us.id).subscribe(chartData=>{
