@@ -12,6 +12,7 @@ export class AppComponent {
 
   s: string = "Hello2";
   teams:any;
+  chartData:any;
   self = this;
   selectedSprint;
 
@@ -27,6 +28,9 @@ export class AppComponent {
               });
               this.apiService.getChartDataByUsId(us.id).subscribe(chartData=>{
                 us.chartData = chartData;
+                console.log("test");
+                console.log(chartData);
+                this.chartData = chartData;
               });
           });
       });

@@ -1,8 +1,12 @@
 <div class="row">
+  
+    {{chartData | json }}
+test
+    {{lineChartData| json}}
     <div class="col-md-6">
       <div style="display: block;">
       <canvas baseChart width="400" height="400"
-                  [datasets]="lineChartData"
+                  [datasets]="{[data: [118, 26, 177], label: 'Sprint 3']}"
                   [labels]="lineChartLabels"
                   [options]="lineChartOptions"
                   [colors]="lineChartColors"
